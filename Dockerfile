@@ -23,7 +23,7 @@ WORKDIR src
 
 RUN build/install-build-deps.sh --no-prompt
 
-RUN gn gen out/Release --args="is_debug=false"
+RUN gn gen out/Release --args="is_debug=false target_cpu=\"arm64\""
 RUN ninja -C out/Release chromedriver
 
 RUN cp out/Release/chromedriver /usr/bin/chromedriver
