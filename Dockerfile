@@ -1,8 +1,7 @@
 FROM ubuntu:20.04
 
 # Install Chromium build dependencies.
-RUN apt-get -qq update && apt-get -qq dist-upgrade && apt-get -qq install git build-essential clang curl
-
+RUN apt-get -qq update && apt-get -qq dist-upgrade && apt-get -qq install git build-essential clang curl lsb-release
 # Install Chromium's depot_tools.
 ENV DEPOT_TOOLS /usr/bin/depot_tools
 RUN git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git $DEPOT_TOOLS
